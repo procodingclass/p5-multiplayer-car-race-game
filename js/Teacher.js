@@ -1,6 +1,6 @@
 class Teacher {
   constructor() {
-    this.generateSecretWord = createButton("Genrate Secret Word");
+    this.generateSecretWord = createButton("Generate Secret Word");
     this.message = createElement("h3");
     this.secretWord = createElement("h3");
 
