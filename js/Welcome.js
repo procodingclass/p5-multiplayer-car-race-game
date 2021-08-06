@@ -1,8 +1,7 @@
 class Welcome {
   constructor() {
-    this.logoImage =
-      "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/logo.png";
-    this.logo = createImg(this.logoImage);
+    this.logoImage = "./assets/title.png";
+    this.logo = createImg(this.logoImage, "gameTitle");
 
     this.teacherButton = createButton("Teacher");
     this.studentButton = createButton("Student");
@@ -14,12 +13,13 @@ class Welcome {
   }
 
   setElementPosition() {
-    this.logo.position(width / 3.2, 10);
+    this.logo.position(120, 160);
     this.teacherButton.position(width / 2.3, height / 2 - 100);
     this.studentButton.position(width / 2.3, height / 2);
   }
 
   setElementStyle() {
+    this.logo.class("gameTitle");
     this.teacherButton.class("customButton");
     this.studentButton.class("customButton");
   }

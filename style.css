@@ -2,8 +2,14 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
 }
+
+@font-face {
+  font-family: vollkorn;
+  src: url(./assets/Vollkorn-Bold.ttf);
+}
+
+
 canvas {
   display: flex;
   align-self: center;
@@ -13,24 +19,39 @@ canvas {
 h1{
   color: #ff5722;
   text-align: center;
+  font-family: vollkorn;
 }
 
 h2, h3 {
-  color: #880e4f;
+  color: #FFFF;
   font-size: 25px;
   text-align: center;
+  font-family: vollkorn;
 }
 
 
-.customInput {
-  width:200px;
-  height:30px;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 5px;
-  background-color: white;
-  outline:none;
+.gameTitle{
+  width: 85%;
+  height: 190px;
+}
 
+.gameTitleAfterEffect{
+  width: 25%;
+  height: 80px;
+}
+
+.customInput {
+  width:250px;
+  height:30px;
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:transparent;
+  font-size: 20px;
+  outline:none;
+  color:white;
+  font-family: vollkorn;
+  text-align: center;
 }
 
 
@@ -38,34 +59,35 @@ h2, h3 {
   width:200px;
   height:60px;
   background-color: #fea834;
-  border: none;
-  color: #000;
+  border: 3px solid white;
+  color: #FFFF;
   font-weight:bold;
-  padding: 15px 32px;
-  border-radius: 15px;
+  border-radius: 10px;
   margin-bottom:100px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: vollkorn;
   margin: 4px 2px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  outline: none;
 }
 
 
-.volumeButton {
-  width:100px;
-  height:100px;
-  background-color: #fea834;
-  padding:15px;
-  border-radius: 150px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.5; /* Firefox */
 }
 
+.leadersText{
+  font-size: 20px;
+  color: white;
+  font-family: vollkorn;
+  text-align: center;
+}
 
 .loginButton:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
