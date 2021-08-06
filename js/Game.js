@@ -59,22 +59,22 @@ class Game {
 
   showLife() {
     push();
-    image(lifeImage, width / 2 - 130, height - player.positionY - 480, 20, 20);
+    image(lifeImage, width / 2 - 130, height - player.positionY - 400, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 480, 185, 20);
+    rect(width / 2 - 100, height - player.positionY - 400, 185, 20);
     fill("#f50057");
-    rect(width / 2 - 100, height - player.positionY - 480, player.life, 20);
+    rect(width / 2 - 100, height - player.positionY - 400, player.life, 20);
     noStroke();
     pop();
   }
 
   showFuel() {
     push();
-    image(fuelImage, width / 2 - 130, height - player.positionY - 420, 20, 20);
+    image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 420, 185, 20);
+    rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
     fill("#ffc400");
-    rect(width / 2 - 100, height - player.positionY - 420, player.fuel, 20);
+    rect(width / 2 - 100, height - player.positionY - 350, player.fuel, 20);
     noStroke();
     pop();
   }
@@ -88,10 +88,6 @@ class Game {
     if (allPlayers !== undefined) {
       background(backgroundImage);
       image(track, 0, -height * 5, width, height * 6);
-
-      this.showLife();
-      this.showFuel();
-      this.showLeaderboard();
 
       //index of the array
       var index = 0;
@@ -131,28 +127,32 @@ class Game {
           camera.position.y = cars[index - 1].position.y;
         }
       }
+
+      if (this.playerMoving) {
+        player.positionY += 5;
+        player.update();
+      }
+
+      // handling keyboard events
+      this.handlePlayerControls();
+
+      // Finshing Line
+      const finshLine = height * 6 - 100;
+
+      if (player.positionY > finshLine) {
+        gameState = 2;
+        player.rank += 1;
+        Player.updateCarsAtEnd(player.rank);
+        player.update();
+        this.showRank();
+      }
+
+      drawSprites();
+
+      this.showLife();
+      this.showFuel();
+      this.showLeaderboard();
     }
-
-    if (this.playerMoving) {
-      player.positionY += 5;
-      player.update();
-    }
-
-    // handling keyboard events
-    this.handlePlayerControls();
-
-    // Finshing Line
-    const finshLine = height * 6 - 100;
-
-    if (player.positionY > finshLine) {
-      gameState = 2;
-      player.rank += 1;
-      Player.updateCarsAtEnd(player.rank);
-      player.update();
-      this.showRank();
-    }
-
-    drawSprites();
   }
 
   handlePlayerControls() {

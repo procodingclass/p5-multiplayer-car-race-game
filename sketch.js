@@ -24,7 +24,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(displayWidth, displayHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
   fireAuth = firebase.auth();
   db = firebase.database();
   game = new Game();
@@ -131,5 +131,5 @@ function addSpirtes(
 }
 
 function windowResized() {
-  resizeCanvas(displayWidth, displayHeight);
+  resizeCanvas(windowWidth, windowHeight);
 }
