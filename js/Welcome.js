@@ -13,7 +13,7 @@ class Welcome {
   }
 
   setElementPosition() {
-    this.logo.position(120, 160);
+    this.logo.position(210, 100);
     this.teacherButton.position(width / 2.3, height / 2 - 100);
     this.studentButton.position(width / 2.3, height / 2);
   }
