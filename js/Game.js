@@ -59,22 +59,22 @@ class Game {
 
   showLife() {
     push();
-    image(lifeImage, width / 2 - 130, 40, 20, 20);
+    image(lifeImage, 60, height - player.positionY - 50, 20, 20);
     fill("white");
-    rect(width / 2 - 100,40, 185, 20);
+    rect(100,height - player.positionY - 50, 185, 20);
     fill("#f50057");
-    rect(width / 2 - 100, 40, player.life, 20);
+    rect(100, height - player.positionY  - 50, player.life, 20);
     noStroke();
     pop();
   }
 
   showFuel() {
     push();
-    image(fuelImage, width / 2 - 130, height - player.positionY - 350, 20, 20);
+    image(fuelImage,  60, height - player.positionY, 20, 20);
     fill("white");
-    rect(width / 2 - 100, height - player.positionY - 350, 185, 20);
+    rect(100, height - player.positionY, 185, 20);
     fill("#ffc400");
-    rect(width / 2 - 100, height - player.positionY - 350, player.fuel, 20);
+    rect(100, height - player.positionY, player.fuel, 20);
     noStroke();
     pop();
   }
